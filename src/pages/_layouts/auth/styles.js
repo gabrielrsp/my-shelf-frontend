@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
-
 export const SideInfo = styled.div`
 
   height: 500px;
