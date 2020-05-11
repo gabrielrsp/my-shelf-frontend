@@ -14,6 +14,7 @@ import history from './services/history';
 
 function App() {
   return (
+    <>
     <Provider store={store}>
       <PersistGate persistor={persistor} >
         <Router history={history}>
@@ -23,6 +24,7 @@ function App() {
         </Router>
       </PersistGate>
     </Provider>
+    </>
   );
 }
 
