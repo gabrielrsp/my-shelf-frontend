@@ -21,7 +21,6 @@ export default function Main() {
     async function loadBooks() {
 
       const response = await api.get('books');
-      console.log(response.data)
       setBook(response.data)
     }
 
