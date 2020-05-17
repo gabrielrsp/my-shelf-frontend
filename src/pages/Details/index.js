@@ -4,6 +4,7 @@ import { FaTrash, FaFileUpload } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import api from '../../services/api';
 
+
 function Details({ match }) {
 
   const [book, setBook] = useState([]);
@@ -18,10 +19,9 @@ function Details({ match }) {
       setBook(response.data)
       setQuoteList(response.data.Quotes)
     }
-
     loadBook();
 
-  }, [id, file, quoteList])
+  }, [id, file, quoteList.length])
 
   const handleUpload = e => {
     setFile(e.target.files[0])
@@ -74,83 +74,83 @@ function Details({ match }) {
   return (
     <MainBody>
       <>
-          <Container >
-            <div >
-              {
-                book.url_image ?
+        <Container >
+          <div >
+            {
+              book.url_image ?
 
-                  <div>
-                    <img src={book.url_image} alt="book"
-                      onError={
-                        (e) => {
-                          e.target.onerror = null;
-                          e.target.src = "https://static.thenounproject.com/png/111370-200.png"
-                          e.target.style = 'marginTop: auto; marginLeft: 25px; width: 150px; height: 153px '
-                          e.target.name = 'book.id'
-                        }
+                <div>
+                  <img src={book.url_image} alt="book"
+                    onError={
+                      (e) => {
+                        e.target.onerror = null;
+                        e.target.src = "https://static.thenounproject.com/png/111370-200.png"
+                        e.target.style = 'marginTop: auto; marginLeft: 25px; width: 150px; height: 153px '
+                        e.target.name = 'book.id'
                       }
-                    />
-                  </div>
-                  :
-                  <>
-                    <img style={{ marginTop: 'auto', marginLeft: '25px', width: '150px', height: '150px' }}
-                      alt="book"
-                      src='https://static.thenounproject.com/png/111370-200.png'
-                    />
-                  </>
-              }
-              <div style={{ marginTop: '10px' }}>
-                <h2> <span>Name:</span> {book.name}</h2>
-                <h2> <span>Author:</span> {book.author} </h2>
-                <h2> <span>Notes:</span></h2>
-                <p>{book.notes}</p>
+                    }
+                  />
+                </div>
+                :
+                <>
+                  <img style={{ marginTop: 'auto', marginLeft: '25px', width: '150px', height: '150px' }}
+                    alt="book"
+                    src='https://static.thenounproject.com/png/111370-200.png'
+                  />
+                </>
+            }
+            <div style={{ marginTop: '10px' }}>
+              <h2> <span>Name:</span> {book.name}</h2>
+              <h2> <span>Author:</span> {book.author} </h2>
+              <h2> <span>Notes:</span></h2>
+              <p>{book.notes}</p>
 
-              </div>
             </div>
-          </Container>
+          </div>
+        </Container>
 
-          <InputContainer>
-            <h2>Insert Kindle Notes</h2>
-            <h4>If you have this book on your Kindle, and have its notes file (.xlsx, .csv, .xls, .ods file extensions) you can upload it here
+        <InputContainer>
+          <h2>Insert Kindle Notes</h2>
+          <h4>If you have this book on your Kindle, and have its notes file (.xlsx, .csv, .xls, .ods file extensions) you can upload it here
 
         </h4>
-            <div>
-              <input
-                type="file"
-                accept=".xlsx,.csv,.xls,.ods"
-                onChange={handleUpload}
-                required
-              />
-              <SubmitButton onClick={handleSubmit}>
-                <FaFileUpload color='#fff' size={22} />
-                <span>Upload</span>
-              </SubmitButton>
-            </div>
-          </InputContainer>
+          <div>
+            <input
+              type="file"
+              accept=".xlsx,.csv,.xls,.ods"
+              onChange={handleUpload}
+              required
+            />
+            <SubmitButton onClick={handleSubmit}>
+              <FaFileUpload color='#fff' size={22} />
+              <span>Upload</span>
+            </SubmitButton>
+          </div>
+        </InputContainer>
 
 
+        {
+          quoteList.length ?
+            <>
+              <KindleHeader>
+                <h1>Kindle Notes</h1>
+              </KindleHeader>
+              <DeleteButton onClick={handleDeleteAll}>
+                <FaTrash color='#b30059' size={22} />
+                <span>Delete All</span>
+              </DeleteButton>
+            </>
+            : <></>
+
+        }
+        <FileList>
           {
-            quoteList.length ?
-              <>
-                <KindleHeader>
-                  <h1>Kindle Notes</h1>
-                </KindleHeader>
-                <DeleteButton onClick={handleDeleteAll}>
-                  <FaTrash color='#b30059' size={22} />
-                  <span>Delete All</span>
-                </DeleteButton>
-              </>
-              : <></>
-
+            quoteList.map(
+              quote => (
+                <li key={quote.id} >{quote.quote}</li>
+              ))
           }
-          <FileList>
-            {
-              quoteList.map(
-                quote => (
-                    <li key={quote.id} >{quote.quote}</li>
-                ))
-            }
-          </FileList>
+        </FileList>
       </>
     </MainBody>
 
