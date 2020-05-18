@@ -67,7 +67,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  margin-top: 17px;
+  margin-top: 10px;
   margin-bottom: 12px;
   text-align: center;
 
