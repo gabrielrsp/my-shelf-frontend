@@ -21,13 +21,7 @@ export const SideInfo = styled.div`
         color : #fff;
         text-align:center;
       }
-      h3 {
-        color : #fff;
-        margin: 60px 10px;
-        text-align:center;
-        padding: 0 5px;
-      }
-
+  
       p {
         font-weight: bold;
         color : #fff;
@@ -35,13 +29,18 @@ export const SideInfo = styled.div`
         margin: 60px 10px;
         text-align:center;
         padding: 0 5px;
+
+        @media (max-width: 580px) {
+          margin: 36px 10px;
+        
+      }
       }
     }
 
     @media (max-width: 580px) {
     width: 100%;
     border-radius: 10px;
-    height: 350px;
+    height: 300px;
     align-content: center;
 
   }
