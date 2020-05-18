@@ -16,7 +16,7 @@ export default function AuthLayout({ children }) {
 
       <div style={{ display: 'flex', justifyContent: 'center' }}>
 
-        <Wrapper >
+        <Wrapper>
 
           <SideInfo>
             <div>
@@ -27,13 +27,11 @@ export default function AuthLayout({ children }) {
             </div>
           </SideInfo>
 
-
           <motion.div
             exit={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             initial={{ opacity: 0 }}
           >
-          
             <Content>
               {children}
             </Content>
