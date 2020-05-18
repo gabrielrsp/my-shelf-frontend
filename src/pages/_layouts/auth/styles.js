@@ -36,7 +36,7 @@ export const SideInfo = styled.div`
     @media (max-width: 580px) {
     width: 100%;
     border-radius: 10px;
-    height: 240px;
+    height: 280px;
     align-content: center;
   }
 `;
@@ -53,7 +53,7 @@ export const Wrapper = styled.div`
   background: #F0F0F5;
   border: 0;
   border-radius: 10px;
-  margin-top: 25px;
+  margin-top: 20px;
   margin: 0 10px;
 
   @media (max-width: 580px) {
@@ -88,7 +88,7 @@ export const Content = styled.div`
   text-align: center;
 
   h1 {
-      margin-top: 25px;
+      margin-top: 22px;
       display: flex;
       justify-content: center;
       font-size: 25px;
