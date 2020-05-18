@@ -36,7 +36,7 @@ export const SideInfo = styled.div`
     @media (max-width: 580px) {
     width: 100%;
     border-radius: 10px;
-    height: 250px;
+    height: 240px;
     align-content: center;
   }
 `;
@@ -67,8 +67,8 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  margin-top: 21px;
-  margin-bottom: 16px;
+  margin-top: 19px;
+  margin-bottom: 13px;
   text-align: center;
 
   strong {
