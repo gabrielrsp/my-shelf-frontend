@@ -42,7 +42,6 @@ export const SideInfo = styled.div`
     width: 100%;
     border-radius: 10px;
     height: 350px;
-    margin: 0 5px;
     align-content: center;
 
   }
@@ -71,7 +70,7 @@ export const Wrapper = styled.div`
     display: block;
     justify-content: center;
     align-items: center;
-    margin: 0 2px;
+ 
     
   }
 
@@ -79,8 +78,8 @@ export const Wrapper = styled.div`
 
 export const Title = styled.div`
 
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 25px;
+  margin-bottom: 20px;
   text-align: center;
 
   strong {
