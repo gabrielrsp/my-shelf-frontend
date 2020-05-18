@@ -12,7 +12,7 @@ export const SideInfo = styled.div`
     div {
       padding-top: 80px;
       @media (max-width: 580px) {
-        padding-top: 50px;
+        padding-top: 25px;
       }
 
       h1 {
@@ -28,7 +28,7 @@ export const SideInfo = styled.div`
         text-align:center;
         padding: 0 5px;
         @media (max-width: 580px) {
-          margin: 36px 10px; 
+          margin: 22px 10px; 
         }
       }
     }
@@ -36,7 +36,7 @@ export const SideInfo = styled.div`
     @media (max-width: 580px) {
     width: 100%;
     border-radius: 10px;
-    height: 300px;
+    height: 250px;
     align-content: center;
   }
 `;
@@ -67,8 +67,8 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  margin-top: 30px;
-  margin-bottom: 25px;
+  margin-top: 25px;
+  margin-bottom: 20px;
   text-align: center;
 
   strong {
