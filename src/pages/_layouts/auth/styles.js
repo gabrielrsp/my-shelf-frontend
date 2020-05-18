@@ -10,12 +10,12 @@ export const SideInfo = styled.div`
   border-bottom-left-radius: 10px;
   background: linear-gradient(135deg, #009999, #46ccbf);
 
-
     div {
+      padding-top: 90px;
+
       h1 {
         color : #fff;
         text-align:center;
-        margin-top: 115px;
       }
       h3 {
         color : #fff;
@@ -33,6 +33,15 @@ export const SideInfo = styled.div`
         padding: 0 5px;
       }
     }
+
+    @media (max-width: 580px) {
+    width: 100%;
+    border-radius: 10px;
+    height: 400px;
+    margin: 0 5px;
+
+  }
+
 `;
 
 export const Wrapper = styled.div`
@@ -49,13 +58,24 @@ export const Wrapper = styled.div`
   border: 0;
   border-radius: 10px;
   margin-top: 30px;
+  margin: 0 10px;
+
+  @media (max-width: 580px) {
+    height: 0;
+    margin-top: 0;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2px;
+    
+  }
 
 `;
 
 export const Title = styled.div`
 
   margin-top: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 40px;
   text-align: center;
 
   strong {
@@ -93,6 +113,7 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 30px;
+    margin: 0 10px;
 
     input{
     background: rgba(0, 0, 0, 0.1);
