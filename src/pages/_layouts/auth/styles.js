@@ -10,7 +10,7 @@ export const SideInfo = styled.div`
   background: linear-gradient(135deg, #009999, #46ccbf);
 
     div {
-      padding-top: 80px;
+      padding-top: 70px;
       @media (max-width: 580px) {
         padding-top: 25px;
       }
@@ -53,7 +53,7 @@ export const Wrapper = styled.div`
   background: #F0F0F5;
   border: 0;
   border-radius: 10px;
-  margin-top: 30px;
+  margin-top: 25px;
   margin: 0 10px;
 
   @media (max-width: 580px) {
@@ -67,8 +67,8 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  margin-top: 25px;
-  margin-bottom: 20px;
+  margin-top: 21px;
+  margin-bottom: 16px;
   text-align: center;
 
   strong {
@@ -101,7 +101,7 @@ export const Content = styled.div`
   form {
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 25px;
     margin: 0 10px;
  
     @media (max-width: 580px) {
