@@ -11,7 +11,11 @@ export const SideInfo = styled.div`
   background: linear-gradient(135deg, #009999, #46ccbf);
 
     div {
-      padding-top: 90px;
+      padding-top: 80px;
+
+      @media (max-width: 580px) {
+        padding-top: 50px;
+      }
 
       h1 {
         color : #fff;
@@ -37,8 +41,9 @@ export const SideInfo = styled.div`
     @media (max-width: 580px) {
     width: 100%;
     border-radius: 10px;
-    height: 400px;
+    height: 350px;
     margin: 0 5px;
+    align-content: center;
 
   }
 
@@ -75,7 +80,7 @@ export const Wrapper = styled.div`
 export const Title = styled.div`
 
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   text-align: center;
 
   strong {
@@ -95,7 +100,6 @@ export const Content = styled.div`
   max-width: 315px;
   justify-content:center;
   text-align: center;
-
 
   h1 {
       margin-top: 25px;
