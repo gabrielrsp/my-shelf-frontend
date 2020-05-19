@@ -29,7 +29,7 @@ function SignUp() {
         animate={{ opacity: 1 }}
         initial={{ opacity: 0 }}
       >
-        <h1 style={{ marginTop: '10px', marginBottom: '10px' }} >Sign Up</h1>
+        <h1 style={{ marginTop: '8px', marginBottom: '8px' }} >Sign Up</h1>
         <Form schema={schema} onSubmit={handleSubmit}>
           <Input name="name" placeholder="Full Name" />
           <Input name="email" type="email" placeholder="Email" />
