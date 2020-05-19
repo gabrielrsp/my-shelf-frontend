@@ -26,22 +26,20 @@ export default function Profile() {
       animate={{ opacity: 1 }}
       initial={{ opacity: 0 }}
     >
-      <Container>
-        <Form initialData={profile} onSubmit={handleSubmit} >
-          <Input name="name" placeholder="First name" />
-          <Input name="email" type="email" placeholder="Email Adress" />
-
-          <hr />
-
-          <Input type="password" name="oldPassword" placeholder="Current password" />
-          <Input type="password" name="password" placeholder="New password" />
-          <Input type="password" name="confirmPassword" placeholder="Confirm password" />
-
-          <button type="submit">Update Profile</button>
-        </Form>
-
-        <button type="button" onClick={handleSignOut} >Log Out </button>
-      </Container>
+      <div style={{ textAlign: '-webkit-center' }} >
+        <Container>
+          <Form initialData={profile} onSubmit={handleSubmit} >
+            <Input name="name" placeholder="First name" />
+            <Input name="email" type="email" placeholder="Email Adress" />
+            <hr />
+            <Input type="password" name="oldPassword" placeholder="Current password" />
+            <Input type="password" name="password" placeholder="New password" />
+            <Input type="password" name="confirmPassword" placeholder="Confirm password" />
+            <button type="submit">Update Profile</button>
+          </Form>
+          <button type="button" onClick={handleSignOut} >Log Out </button>
+        </Container>
+      </div>
     </motion.div>
   )
 }

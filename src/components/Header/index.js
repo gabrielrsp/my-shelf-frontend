@@ -24,7 +24,6 @@ export default function Header() {
                 <strong>Hello, {profile.name.trim().split(" ")[0]} !</strong>
               <Link to="/profile">
                 <div>
-                  <span>Profile</span>
                   <FaUserAlt size={23} style={{ color: '#fff', marginLeft: '8px' }} />
                 </div>
               </Link>
