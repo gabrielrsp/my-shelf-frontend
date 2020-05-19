@@ -30,6 +30,12 @@ export const Container = styled.div`
       }
     }
 
+    p {
+      font-size: 16px;
+      font-weight: bold;
+      color: #4d4d4d;
+    }
+
     div {
       display: flex;
       margin-bottom: 10px;

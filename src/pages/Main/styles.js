@@ -92,6 +92,12 @@ max-width: 1020px;
     margin: 30px auto;
     margin-bottom : 0px;
 
+    @media (max-width: 580px) {
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+  }
+
     h1 {
       display: flex;
       justify-content: center;
@@ -119,6 +125,10 @@ export const Form = styled.form`
   margin-bottom: 3px;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 580px) {
+    margin: 0px;
+      }
   
   display: flex;
     flex-direction: column;

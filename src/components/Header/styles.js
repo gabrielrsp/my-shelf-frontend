@@ -29,7 +29,10 @@ export const Container = styled.div`
       font-size: 23px;
       display: block;
       color: #FFF;
-      
+
+      @media (max-width: 580px) {
+      width: 60px;
+      }
     }
   }
 
@@ -44,8 +47,8 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   height: 64px;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0 ;
   display: flex;
 
   justify-content: space-between;

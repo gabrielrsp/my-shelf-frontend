@@ -21,9 +21,7 @@ export default function Header() {
         <aside>
           <Profile>
             <div>
-              <div>
-              <strong>Hello, {profile.name} !</strong>
-              </div>
+                <strong>Hello, {profile.name.trim().split(" ")[0]} !</strong>
               <Link to="/profile">
                 <div>
                   <span>Profile</span>
