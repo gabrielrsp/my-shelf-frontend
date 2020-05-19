@@ -6,6 +6,10 @@ export const MainBody = styled.body`
     max-width: 1020px;
     margin: 0 auto;
 
+    @media (max-width: 580px) {
+      margin: 0 8px;
+      }
+
 `;
 
 export const Container = styled.div`
@@ -82,6 +86,7 @@ h2 {
 
 h4 {
   margin-top: 10px;
+  margin-bottom: 10px;
   color: #262626;
 }
 
@@ -121,6 +126,10 @@ export const FileList = styled.ul`
     padding: 10px;
     margin: 30px auto;
 
+    @media (max-width: 580px) {
+      padding: 1px;
+      }
+
 
   li {
   display: flex;
@@ -132,6 +141,8 @@ export const FileList = styled.ul`
   border: 0;
   border-radius: 4px;
   justify-content:center;
+
+
   }
 
 `;
@@ -182,21 +193,16 @@ export const SubmitButton = styled.button.attrs({
 
 `;
 
-
 export const KindleHeader = styled.div`
 
 display: flex;
 width: 100%;
-justify-content: center;
-
+place-content: center;
 h1 {
   color: #009999;
 }
 
 `;
-
-
-
 
 export const DeleteButton = styled.button.attrs({
   type: 'submit',
@@ -206,7 +212,6 @@ export const DeleteButton = styled.button.attrs({
   display: flex;
   justify-content: right;
   align-self: center;
-
 
   display: flex;
   align-items: center;

@@ -4,7 +4,6 @@ import { FaTrash, FaFileUpload } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import api from '../../services/api';
 
-
 function Details({ match }) {
 
   const [book, setBook] = useState([]);
@@ -39,7 +38,6 @@ function Details({ match }) {
       toast.success('All Kindle notes removed');
 
     }
-
   }
 
   const handleSubmit = async e => {
@@ -93,13 +91,13 @@ function Details({ match }) {
                 </div>
                 :
                 <>
-                <div>
+                  <div>
 
-                  <img style={{ marginTop: 'auto', marginLeft: '25px', width: '150px', height: '150px' }}
-                    alt="book"
-                    src='https://static.thenounproject.com/png/111370-200.png'
+                    <img style={{ marginTop: 'auto', marginLeft: '25px', width: '150px', height: '150px' }}
+                      alt="book"
+                      src='https://static.thenounproject.com/png/111370-200.png'
                     />
-                    </div>
+                  </div>
                 </>
             }
             <div style={{ marginTop: '10px' }}>
@@ -114,7 +112,7 @@ function Details({ match }) {
 
         <InputContainer>
           <h2>Insert Kindle Notes</h2>
-          <h4>If you have this book on your Kindle, and have its notes file (.xlsx, .csv, .xls, .ods file extensions) you can upload it here
+          <h4>If you have this book on your Kindle, and have its notes file (.xlsx, .csv, .xls, .ods file extensions) you can upload it here.
 
         </h4>
           <div>
