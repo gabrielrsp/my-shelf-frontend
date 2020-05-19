@@ -16,12 +16,21 @@ export const BookList = styled.ul`
   grid-gap: 20px;
   list-style: none;
 
+  @media (max-width: 580px) {
+    display: block;
+      }
+
 li {
   display: flex;
   flex-direction: column;
-  background: rgba(0,0,0,0.0300);
+  background: rgba(0,0,0,0.0330);
   border-radius: 4px;
   padding: 20px;
+
+  @media (max-width: 580px) {
+    margin: 0 10px;
+    margin-bottom: 20px;
+  }
 
 img {
 

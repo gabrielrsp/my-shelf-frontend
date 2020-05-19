@@ -2,16 +2,15 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 
-    max-width: 1020px;
-    margin: 0 auto;
-    padding: 0 20px 50px;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 20px 50px;
   background: #009999;
   padding: 0 30px;
+  padding-left: 10px;
   border-radius: 4px;
   position: sticky;
   top: 0;
-
-
 
 
   div {
@@ -60,6 +59,7 @@ export const Profile = styled.header`
       font-size: 18px;
       display: block;
       color: #FFF;
+      text-align: justify;
     }
 
     a {
@@ -67,6 +67,7 @@ export const Profile = styled.header`
       margin-top: 2px;
       font-size: 15px;
       color: #FFF;
+      font-weight: bold;
     }
 
   }
