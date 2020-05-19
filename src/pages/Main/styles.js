@@ -28,8 +28,9 @@ li {
   padding: 20px;
 
   @media (max-width: 580px) {
-    margin: 0 10px;
-    margin-bottom: 20px;
+    margin: 0 20px;
+    margin-bottom: 15px;
+    background: rgba(0,0,0,0.0550);
   }
 
 img {
@@ -82,41 +83,41 @@ export const MainBody = styled.div`
 
 export const Container = styled.div`
 
-max-width: 1020px;
-    margin: 0 auto;
+  max-width: 1020px;
+  margin: 0 auto;
 
-    max-width: 700px;
-    border-radius: 4px;
-    box-shadow: 0 0 20px rgba (0, 0, 0.1);
-    padding: 20px;
-    margin: 30px auto;
-    margin-bottom : 0px;
+  max-width: 700px;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba (0, 0, 0.1);
+  padding: 20px;
+  margin: 30px auto;
+  margin-bottom : 0px;
 
-    @media (max-width: 580px) {
+  @media (max-width: 580px) {
     margin: 0;
     margin-top: 20px;
     padding: 0;
   }
 
-    h1 {
-      display: flex;
-      justify-content: center;
-      font-size: 25px;
-      display: flex;
-      flex-direction: row;
-      color: #009999;
-      margin-bottom: 20px;
-    }
+  h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    color: #009999;
+    margin-bottom: 20px;
+  }
 
-    h3 {
-      display: flex;
-      justify-content: center;
-      font-size: 22px;
-      margin-right: 11px;
-      flex-direction: row;
-      color: #009999;
-      margin-bottom: 20px;
-    }
+  h3 {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    margin-right: 11px;
+    flex-direction: row;
+    color: #009999;
+    margin-bottom: 20px;
+  }
 
 `;
 
@@ -137,7 +138,7 @@ export const Form = styled.form`
   input {
     flex: 1;
     padding: 10px 15px;
-    margin: 8px;
+    margin: 10px;
     background: rgba(0, 0, 0, 0.1);
     border: 0;
     border-radius: 4px;
@@ -149,7 +150,7 @@ export const Form = styled.form`
     border-radius: 4px;
     padding: 10px 15px 60px 10px;
     resize: vertical;
-    margin: 8px;
+    margin: 10px;
   }
 
   div {
