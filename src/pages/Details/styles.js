@@ -40,6 +40,12 @@ export const Container = styled.div`
       display: flex;
       margin-bottom: 10px;
       margin-top: 5px;
+
+      @media (max-width: 580px) {
+      display: block;
+      justify-content: center;
+      }
+
         div {
           margin-left: 5px;
           margin-right: 20px;
@@ -52,6 +58,11 @@ export const Container = styled.div`
     img {
       width: 175px;
       height: 260px;
+      align-content: center;
+      @media (max-width: 580px) {
+        margin-bottom: 20px;
+      }
+      
     }
 
 `;
