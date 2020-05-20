@@ -73,11 +73,11 @@ function Details({ match }) {
     <MainBody>
       <>
         <Container >
-          <div >
+          <div>
             {
               book.url_image ?
 
-                <div>
+                <div style={{ textAlign: 'center' }} >
                   <img src={book.url_image} alt="book"
                     onError={
                       (e) => {

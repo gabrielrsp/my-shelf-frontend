@@ -22,6 +22,11 @@ export const Container = styled.div`
     margin-bottom : 0px;
     background: rgba(0,0,0,0.05);
 
+    @media (max-width: 580px) {
+      margin: 10px auto;
+      }
+
+
     h2 {
       margin-bottom: 20px;
         color: #666666;
@@ -43,7 +48,7 @@ export const Container = styled.div`
 
       @media (max-width: 580px) {
       display: block;
-      justify-content: center;
+
       }
 
         div {
