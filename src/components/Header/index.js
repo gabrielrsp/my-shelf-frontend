@@ -21,7 +21,7 @@ export default function Header() {
         <aside>
           <Profile>
             <div>
-                <strong>Hello, {profile.name.trim().split(" ")[0]} !</strong>
+                <strong>Hello, {profile.name.trim().split(" ")[0]}!</strong>
               <Link to="/profile">
                 <div>
                   <FaUserAlt size={23} style={{ color: '#fff', marginLeft: '8px' }} />
