@@ -3,7 +3,6 @@ import { Container, InputContainer, FileList, SubmitButton, DeleteButton, Kindle
 import { FaTrash, FaFileUpload } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import api from '../../services/api';
-import history from '../../services/history';
 
 function Details({ match }) {
 
@@ -16,11 +15,6 @@ function Details({ match }) {
   useEffect(() => {
     async function loadBook() {
       const response = await api.get(`books/${id}`)
-
-      if (response.data.includes('401')) {
-        history.push('/');
-      } else
-
       setBook(response.data)
       setQuoteList(response.data.Quotes)
     }

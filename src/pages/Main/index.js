@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { BookList, Container, Form, SubmitButton, UpdateButton, MainBody } from './styles';
 import { FaPlus, FaEdit, FaTimes } from "react-icons/fa";
-import history from '../../services/history';
 import BookItem from '../../components/BookItem';
 import api from '../../services/api';
 import { motion } from 'framer-motion';
@@ -17,15 +16,13 @@ export default function Main() {
   const [box, setBox] = useState();
   const [idClick, setIdClick] = useState(1);
 
+
   useEffect(() => {
     async function loadBooks() {
 
       const response = await api.get('books');
-
-      if (response.data.includes('401')) {
-        history.push('/');
-      } else
-        setBook(response.data)
+      console.log(response.data)
+      setBook(response.data)
     }
 
     loadBooks();
