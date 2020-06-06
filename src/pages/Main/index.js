@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { BookList, Container, Form, SubmitButton, UpdateButton, MainBody } from './styles';
 import { FaPlus, FaEdit, FaTimes } from "react-icons/fa";
 import BookItem from '../../components/BookItem';
-import history from '../../../services/history';
+import history from '../../services/history';
 import api from '../../services/api';
 import { motion } from 'framer-motion';
 
@@ -19,12 +19,13 @@ export default function Main() {
 
   useEffect(() => {
     async function loadBooks() {
+
       const response = await api.get('books')
-        .catch(function (error) {
-          if (error.response.status == 401) {
-            history.push('/');
-          }
-        });
+      .catch(function (error) {
+        if (error.response.status === 401) {
+          history.push('/');
+        }
+      });
 
       setBook(response.data)
     }
