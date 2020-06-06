@@ -27,13 +27,6 @@ export function* signIn({ payload }) {
       toast.error('You have entered wrong credentials many times. Try again later');
       yield put(signFailure());
     }
-
-    if (request.includes('401')) {
-      history.push('/');
-    }
-
-
-
     else
 
     toast.error('Failed to Authenticate');
