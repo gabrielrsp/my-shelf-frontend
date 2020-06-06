@@ -16,12 +16,10 @@ export default function Main() {
   const [box, setBox] = useState();
   const [idClick, setIdClick] = useState(1);
 
-
   useEffect(() => {
     async function loadBooks() {
-
       const response = await api.get('books');
-      console.log(response.data)
+      console.log('tei')
       setBook(response.data)
     }
 
