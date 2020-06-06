@@ -21,11 +21,11 @@ export default function Main() {
     async function loadBooks() {
 
       const response = await api.get('books');
-      setBook(response.data)
 
       if (response.data.includes('401')) {
         history.push('/');
-      }
+      } else
+        setBook(response.data)
     }
 
     loadBooks();
