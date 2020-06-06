@@ -22,8 +22,7 @@ export default function Main() {
     async function loadBooks() {
 
       const response = await api.get('books').catch(function (error) {
-        if (error.response) {
-          console.log(error.response.status);
+        if (error.response.status === 401) {
           history.push('/');
         } else
           setBook(response.data)
