@@ -19,8 +19,8 @@ export default function Main() {
 
   useEffect(() => {
     async function loadBooks() {
-      console.log('TEEEI')
       const response = await api.get('books');
+      console.log(response)
       setBook(response.data)
     }
 
