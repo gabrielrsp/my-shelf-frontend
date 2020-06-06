@@ -20,16 +20,14 @@ export default function Main() {
 
   useEffect(() => {
     async function loadBooks() {
+
       const response = await api.get('books').catch(function (error) {
         if (error.response) {
-          const err = error.response.status;
-        }
+          console.log(error.response.status);
+          history.push('/');
+        } else
+          setBook(response.data)
       });
-      if (err === 401) {
-        history.push('/');
-      }
-      else
-        setBook(response.data);
     }
 
     loadBooks();
