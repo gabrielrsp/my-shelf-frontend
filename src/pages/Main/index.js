@@ -19,10 +19,15 @@ export default function Main() {
 
   useEffect(() => {
     async function loadBooks() {
-      const response = await api.get('books');
-      if(!response){
-        console.log('response nao preenchido')
-      } else
+
+      const response = await api.get('books').catch(function (error) {
+        if (error.response) {
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        }
+      });
+      
       setBook(response.data)
     }
 
