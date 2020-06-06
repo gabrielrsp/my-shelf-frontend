@@ -17,17 +17,15 @@ export default function Main() {
   const [box, setBox] = useState();
   const [idClick, setIdClick] = useState(1);
 
-
   useEffect(() => {
     async function loadBooks() {
 
       const response = await api.get('books');
       setBook(response.data)
 
-      if (response.includes('401')) {
+      if (response.data.includes('401')) {
         history.push('/');
       }
-
     }
 
     loadBooks();
