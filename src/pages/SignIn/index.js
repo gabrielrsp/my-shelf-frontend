@@ -27,14 +27,18 @@ function SignIn() {
 
   return (
     <>
-      <motion.div exit={{ opacity: 0}} animate={{opacity: 1}} initial={{opacity: 0}} >
-      <h1 style={{ marginTop: '8px', marginBottom: '8px' }} >Sign In</h1>
-      <Form schema={schema} onSubmit={handleSubmit}>
-        <Input name="email" type="email" placeholder="Email" />
-        <Input name="password" type="password" placeholder="Password" />
-        <button type="submit">{loading ? 'Loading...' : 'Access'}</button>
-        <Link to="/register">Create Free Account</Link>
-      </Form>
+      <motion.div
+        exit={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+      >
+        <h1 style={{ marginTop: '8px', marginBottom: '8px' }} >Sign In</h1>
+        <Form schema={schema} onSubmit={handleSubmit}>
+          <Input name="email" type="email" placeholder="Email" />
+          <Input name="password" type="password" placeholder="Password" />
+          <button type="submit">{loading ? 'Loading...' : 'Access'}</button>
+          <Link to="/register">Create Free Account</Link>
+        </Form>
       </motion.div>
     </>
   );
