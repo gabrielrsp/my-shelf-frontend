@@ -24,10 +24,10 @@ export default function Main() {
 
   useEffect(() => {
     async function loadBooks() {
-
       const response = await api.get('books').catch(function (error) {
         if (error.response.status === 401) {
           dispatch(signOut())
+          window.location.reload();
           history.push('/');
           return;
         }
