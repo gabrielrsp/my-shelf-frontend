@@ -2,9 +2,11 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { BookList, Container, Form, SubmitButton, UpdateButton, MainBody } from './styles';
 import { FaPlus, FaEdit, FaTimes } from "react-icons/fa";
 import BookItem from '../../components/BookItem';
-import { Redirect } from 'react-router-dom';
 import api from '../../services/api';
 import { motion } from 'framer-motion';
+
+import { useDispatch } from 'react-redux';
+import { signOut } from '../../store/modules/auth/actions';
 
 export default function Main() {
 
@@ -17,13 +19,18 @@ export default function Main() {
   const [box, setBox] = useState();
   const [idClick, setIdClick] = useState(1);
 
+  const dispatch = useDispatch();
+
+  function handleSignOut() {
+    dispatch(signOut())
+  }
 
   useEffect(() => {
     async function loadBooks() {
 
       const response = await api.get('books').catch(function (error) {
         if (error.response.status === 401) {
-          return <Redirect to="/" />;
+          handleSignOut();
         } else
           setBook(response.data)
       });
