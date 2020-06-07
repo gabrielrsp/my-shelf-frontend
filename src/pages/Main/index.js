@@ -5,10 +5,6 @@ import BookItem from '../../components/BookItem';
 import api from '../../services/api';
 import { motion } from 'framer-motion';
 
-import { useDispatch } from 'react-redux';
-import history from '../../services/history';
-import { signOut } from '../../store/modules/auth/actions';
-
 export default function Main() {
 
   const [book, setBook] = useState([])
@@ -20,24 +16,14 @@ export default function Main() {
   const [box, setBox] = useState();
   const [idClick, setIdClick] = useState(1);
 
-  const dispatch = useDispatch();
-
   useEffect(() => {
     async function loadBooks() {
-      const response = await api.get('books').catch(function (error) {
-        if (error.response.status === 401) {
-          dispatch(signOut())
-          window.location.reload();
-          history.push('/');
-          return;
-        }
-      });
+      const response = await api.get('books')
       setBook(response.data)
     }
-
     loadBooks();
 
-  }, [idClick, dispatch])
+  }, [idClick])
 
   async function handleAdd(e) {
 

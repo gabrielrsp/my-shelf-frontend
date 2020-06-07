@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import decode from 'jwt-decode';
 import { Route, Redirect } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
@@ -13,7 +14,19 @@ export default function RouteWrapper({
   isPrivate,
   ...rest
 }) {
-  const { signed } = store.getState().auth;
+  let { signed, token } = store.getState().auth;
+
+  if (token) {
+    const { exp } = decode(token) // get expiration date from token
+    if (exp < new Date().getTime() / 1000) {
+      token = '';
+      signed = false;
+    }
+  }
+
+  if (!token && isPrivate) {
+    return <Redirect to="/" />;
+  }
 
   if (!signed && isPrivate) {
     return <Redirect to="/" />;
