@@ -6,6 +6,7 @@ import api from '../../services/api';
 import { motion } from 'framer-motion';
 
 import { useDispatch } from 'react-redux';
+import history from '../../services/history';
 import { signOut } from '../../store/modules/auth/actions';
 
 export default function Main() {
@@ -31,6 +32,7 @@ export default function Main() {
       const response = await api.get('books').catch(function (error) {
         if (error.response.status === 401) {
           handleSignOut();
+          history.push('/');
         } else
           setBook(response.data)
       });
