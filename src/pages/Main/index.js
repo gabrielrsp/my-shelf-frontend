@@ -22,25 +22,22 @@ export default function Main() {
 
   const dispatch = useDispatch();
 
-  function handleSignOut() {
-    dispatch(signOut())
-  }
-
   useEffect(() => {
     async function loadBooks() {
 
       const response = await api.get('books').catch(function (error) {
         if (error.response.status === 401) {
-          handleSignOut();
+          dispatch(signOut())
           history.push('/');
-        } else
-          setBook(response.data)
+          return;
+        }
       });
+      setBook(response.data)
     }
 
     loadBooks();
 
-  }, [idClick])
+  }, [idClick, dispatch])
 
   async function handleAdd(e) {
 
