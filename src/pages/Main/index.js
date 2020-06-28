@@ -170,7 +170,7 @@ export default function Main() {
               onChange={e => setNewAuthor(e.target.value)}
             />
             <input
-              type="text"
+              type="url"
               placeholder="URL image"
               value={newUrl}
               name="url"
