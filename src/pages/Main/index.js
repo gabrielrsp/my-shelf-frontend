@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
 import { BookList, Container, Form, SubmitButton, UpdateButton, MainBody } from './styles';
 import { FaPlus, FaEdit, FaTimes } from "react-icons/fa";
 import BookItem from '../../components/BookItem';
 import api from '../../services/api';
 import { motion } from 'framer-motion';
+import lottie from 'lottie-web';
 
 export default function Main() {
 
@@ -24,6 +25,18 @@ export default function Main() {
     loadBooks();
 
   }, [idClick])
+
+  useEffect(() => {
+
+    lottie.loadAnimation({
+      container: boxAnimation.current,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: require('../../assets/book.json')
+    })
+
+  }, [])
 
   async function handleAdd(e) {
 
@@ -126,23 +139,24 @@ export default function Main() {
     const { name, author, notes, url_image } = response.data;
     const newBook = { name, author, url_image, notes }
 
-    const newBooks = book
-    const bookIndex = book.findIndex(book => book.id === currentId)
+    const newBooks = book;
+    const bookIndex = book.findIndex(book => book.id === currentId);
 
     newBooks[bookIndex] = newBook
-
+    
     setBook(newBooks)
-
+    
     setNewName('');
     setNewAuthor('');
     setNewUrl('');
     setNewNotes('');
     setIdClick('');
     handleClean(e)
-
   }
-
+  
   const bookSize = useMemo(() => book.length, [book])
+  
+  const boxAnimation = useRef(null);
 
   return (
     <MainBody>
@@ -212,7 +226,11 @@ export default function Main() {
           </Form>
           {
             !book ?
-              <h1>Loading</h1> :
+            <>
+            <h1>Loading...</h1>
+            <div ref={boxAnimation} ></div>
+            </>
+              :
 
               bookSize > 1 || bookSize === 0 ?
                 <h3>You have {bookSize} books</h3>
