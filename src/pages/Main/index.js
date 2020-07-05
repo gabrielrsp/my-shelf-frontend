@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 export default function Main() {
 
-  const [book, setBook] = useState([])
+  const [book, setBook] = useState([] | null)
   const [newName, setNewName] = useState('');
   const [newAuthor, setNewAuthor] = useState('');
   const [newUrl, setNewUrl] = useState('');
@@ -211,15 +211,18 @@ export default function Main() {
             }
           </Form>
           {
-            bookSize > 1 || bookSize === 0 ?
-              <h3>You have {bookSize} books</h3>
-              :
-              <h3>You have {bookSize} book</h3>
+            !book ?
+              <h1>Loading</h1> :
+
+              bookSize > 1 || bookSize === 0 ?
+                <h3>You have {bookSize} books</h3>
+                :
+                <h3>You have {bookSize} book</h3>
           }
         </Container>
 
         <BookList>
-          {
+          {book &&
             book.map(book => (
               <>
                 <BookItem
