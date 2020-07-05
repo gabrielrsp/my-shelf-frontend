@@ -227,7 +227,7 @@ export default function Main() {
           {
             !book ?
             <>
-            <h1>Loading...</h1>
+            <h1>Loading Books...</h1>
             <div ref={boxAnimation} ></div>
             </>
               :
